@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Scaleform;
-using Scaleform.GFx;
 using UnityEngine;
 using System.Collections;
 
@@ -15,18 +14,19 @@ public class RTTMovie : Movie {
     {
         SFMgr = sfmgr;
         this.SetFocus(true);
-        InstanceList.Add(this);;
+        InstanceList.Add(this);
     }
 
     public void OnRegisterSWFCallback(Value movieRef)
     {
+        Debug.Log("OnRegisterSWFCallback");
         theMovie = movieRef;
     }
 
     public void Regenerate()
     {
         if (theMovie!=null)
-        theMovie.Invoke("Regenerate");
+        Debug.Log(theMovie.Invoke("Regenerate"));
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Scaleform;
 using UnityEngine;
 using System.Collections;
 
@@ -27,7 +28,7 @@ public class RTTDisplay : SFRTT
         if (MovieClassName != null)
         {
             Type classType = Type.GetType(MovieClassName);
-            Type movieType = Type.GetType(typeof(Scaleform.GFx.Movie).AssemblyQualifiedName);
+            Type movieType = Type.GetType(typeof(Scaleform.Movie).AssemblyQualifiedName);
 #if !NETFX_CORE
             if (classType != null && classType.IsSubclassOf(movieType))
 #else
@@ -42,8 +43,6 @@ public class RTTDisplay : SFRTT
                 if (CreateRenderMovie(camera, movieType)) isinited = true;
             }
         }
-
-        
     }
     public RTTMovie GetMovie()
     {
