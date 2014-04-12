@@ -3,7 +3,9 @@ Temp
 Library
 ProjectSettings
 obj
+
 *.csproj
 *.sln
 *.suo
 *.unityproj
+/Assets/Plugins
