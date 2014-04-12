@@ -1,0 +1,9 @@
+Temp
+
+Library
+ProjectSettings
+obj
+*.csproj
+*.sln
+*.suo
+*.unityproj
