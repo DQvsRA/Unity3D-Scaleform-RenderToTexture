@@ -19,9 +19,10 @@ public class Menu : MonoBehaviour
 
     private void Initialize()
     {
-        SFCamera camera = this.GetComponent<SFCamera>();
-        SFMovieCreationParams creationParams = SFCamera.CreateMovieCreationParams("Menu.swf");
-        creationParams.IsInitFirstFrame = false;
-        mainMovie = new MenuMovie(camera, camera.GetSFManager(), creationParams);
+        //SFCamera camera = this.GetComponent<SFCamera>();
+        //SFMovieCreationParams creationParams = SFCamera.CreateMovieCreationParams("Menu.swf");
+        //creationParams.IsInitFirstFrame = false;
+        //mainMovie = new MenuMovie(camera, camera.GetSFManager(), creationParams);
+        mainMovie = Util.CreateSwf<MenuMovie>("Menu.swf", true);
     }
 }

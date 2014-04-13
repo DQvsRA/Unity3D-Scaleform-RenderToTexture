@@ -6,7 +6,6 @@ using System.Collections;
 public class RTTDisplay : SFRTT
 {
     public bool isinited = false;
-    private bool succeeded = false;
 
     new public virtual void Start()
     {

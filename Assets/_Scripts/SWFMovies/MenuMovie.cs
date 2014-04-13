@@ -18,13 +18,17 @@ public class MenuMovie : Movie
 	
     public void OnRegisterSWFCallback(Value movieRef)
     {
-        theMovie = movieRef;
-        UnityEngine.Debug.Log("Menu Initialized");
-        GameObject rttDisplay = GameObject.Find("RTTDisplay");
-        if (rttDisplay != null)
-        {
-            rttDisplay.GetComponent<RTTDisplay>().enabled = true;
-        }
-	}
+        theMovie = movieRef; //UnityEngine.Debug.Log("Menu Initialized");
+    }
 
+    public void OnMouseClickHandler()
+    {
+        SpinCube();
+    }
+
+    private void SpinCube()
+    {
+        SpinCube spincube = GameObject.Find("SpinningCube").GetComponent<SpinCube>();
+        spincube.isSpin = !spincube.isSpin;
+    }
 }

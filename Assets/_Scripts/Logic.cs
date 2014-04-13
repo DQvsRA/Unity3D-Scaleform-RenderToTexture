@@ -28,7 +28,9 @@ public class Logic : MonoBehaviour
                 rttdisplay.transform.position = Random.insideUnitSphere * 1;
                 rttdisplay.transform.parent = container.transform;
                 display = rttdisplay.GetComponent<RTTDisplay>();
-                display.SwfName = "RTTContent/" + counter + ".swf";
+                display.SwfName = useMultipleSwf ? 
+                                "RTTContent/" + counter + ".swf" 
+                                : "RTTDisplayContent.swf";
                 display.enabled = true;
             }
 	    }
@@ -37,9 +39,10 @@ public class Logic : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	    if (Input.GetKeyDown(KeyCode.Space))
-            foreach (RTTMovie movie in RTTMovie.InstanceList) movie.Regenerate();
+            foreach (RTTMovie movie in RTTMovie.InstanceList) movie.Regenerate();  // RegererateBySearchInContainer
 	}
 
+    /*
     private void RegererateBySearchInContainer()
     {
         int counter = container.transform.childCount;
@@ -57,4 +60,5 @@ public class Logic : MonoBehaviour
             movie.Regenerate();
         }
     }
+     * */
 }
